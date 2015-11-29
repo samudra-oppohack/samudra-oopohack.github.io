@@ -1,6 +1,7 @@
 var idArr = ["MobileNumber", "Name", "DOB", "Gender", "EducationQualification", "NameOfInstitution", "WorkExperience",  "PermanentAddress",
 	"ResidentialAddress", "EmailID", "SecondaryMobile", "RelationshipStatus", "Hobbies", "FathersDetails", "MothersDetails", "ParentsMaritialStatus",
 	"TotalMember", "FamilyIncome", "FamilyHistory", "ChildhoodBehavior", "WhyYouNeedCounseling", "WhatYouExpectFromCounselor", "IssuesBotherYou"];
+var idArr1= ["MobileNumber","File"];
 Parse.initialize("GV7qkwQ7ITIa75MF1P0JxcsKu4MToseJt8wnGQa0","ngfPwJZIeeFdPwkZTLqwwxZVvBOnaI74bZhe0zwK");
 var JsonData,mnum=null;
 function GetHtmlElements() {
@@ -174,6 +175,7 @@ function Fetch(Tablename)
                             
         }
         tableData= tableData+"</table>";
+          document.getElementById("tableUpdate").innerHTML=tableData;
          
          });
     
@@ -309,5 +311,63 @@ function checkCallerNumber()
          FetchFromParse("DETAILS",n);
     }
     });
+    
+}
+
+function FetchRecord('CALLRECORDING'){
+     var promise = new Promise(function(resolve, reject) {
+     var testArray;
+     //var mNumber=document.getElementById("searchNumber")
+    //var mNumber = "8904845390";
+     var intake= Parse.Object.extend(Tablename);
+     var query = new Parse.Query(intake);
+     query.exists("MobileNumber");
+     query.limit(10);
+     query.find({
+    success: function(results) {     
+      var returnArr = [];
+      for (var i = 0; i < results.length; i++) { 
+        var object = results[i];
+      var jsonp=object.toJSON();
+          returnArr.push(jsonp);
+      }
+      testArray=returnArr;
+         resolve(testArray);
+    } });
+       
+     });
+      promise.then(function(data) {                        
+                               
+      console.log(data);
+        JsonData=data;
+        var tableData="<table class=\"table table-hover\">";
+        var len=data.length;
+        JSONToCSVConvertor(data, "Report", true);
+        for(var j=0, iL=idArr1.length; j<iL;j++)
+            {
+                if(j==0){tableData=tableData+"<th>";}
+                var key=idArr1[j];
+                tableData=tableData+"<td>"+key+"</td>";
+                if(j==iL-1){tableData=tableData+"</th>";}
+            }
+        
+        for(var i=0; i<len;i++)
+        {
+            tableData=tableData+"<tr>";
+             for(var j=0, iL=idArr1.length; j<iL;j++)
+            {
+                var key=idArr1[j];
+                tableData=tableData+"<td>"+data[i][key]+"</td>";
+            }
+            tableData=tableData+"</tr>";
+                                
+                            
+        }
+        tableData= tableData+"</table>";
+         
+         });
+    
+}
+    
     
 }
