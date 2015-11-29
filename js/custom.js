@@ -342,13 +342,13 @@ function FetchRecord(Tablename){
         JsonData=data;
         var tableData="<table class=\"table table-hover\">";
         var len=data.length;
-        JSONToCSVConvertor(data, "Report", true);
+        //JSONToCSVConvertor(data, "Report", true);
         for(var j=0, iL=idArr1.length; j<iL;j++)
             {
-                if(j==0){tableData=tableData+"<th>";}
+                //if(j==0){tableData=tableData+"<th>";}
                 var key=idArr1[j];
                 tableData=tableData+"<td>"+key+"</td>";
-                if(j==iL-1){tableData=tableData+"</th>";}
+                //if(j==iL-1){tableData=tableData+"</th>";}
             }
         
         for(var i=0; i<len;i++)
@@ -357,8 +357,10 @@ function FetchRecord(Tablename){
              for(var j=0, iL=idArr1.length; j<iL;j++)
             {
                 var key=idArr1[j];
-                if(key=="File"){tableData=tableData+"<td>"+data[i][key]["url"]+"</td>";}
+                if(key=="File"){tableData=tableData+"<td><a href=\""+data[i][key]["url"]+"\">Download FILE</a></td>";}
+                else{
                 tableData=tableData+"<td>"+data[i][key]+"</td>";
+                    }
             }
             tableData=tableData+"</tr>";
                                 
