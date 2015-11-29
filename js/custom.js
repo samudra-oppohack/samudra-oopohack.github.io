@@ -1,7 +1,7 @@
 var idArr = ["MobileNumber", "Name", "DOB", "Gender", "EducationQualification", "NameOfInstitution", "WorkExperience",  "PermanentAddress",
 	"ResidentialAddress", "EmailID", "SecondaryMobile", "RelationshipStatus", "Hobbies", "FathersDetails", "MothersDetails", "ParentsMaritialStatus",
 	"TotalMember", "FamilyIncome", "FamilyHistory", "ChildhoodBehavior", "WhyYouNeedCounseling", "WhatYouExpectFromCounselor", "IssuesBotherYou"];
-var idArr1= ["MobileNumber","File"];
+var idArr1= ["MobileNumber","File","TimeStamp"];
 Parse.initialize("GV7qkwQ7ITIa75MF1P0JxcsKu4MToseJt8wnGQa0","ngfPwJZIeeFdPwkZTLqwwxZVvBOnaI74bZhe0zwK");
 var JsonData,mnum=null;
 function GetHtmlElements() {
