@@ -314,7 +314,7 @@ function checkCallerNumber()
     
 }
 
-function FetchRecord('CALLRECORDING'){
+function FetchRecord(Tablename){
      var promise = new Promise(function(resolve, reject) {
      var testArray;
      //var mNumber=document.getElementById("searchNumber")
