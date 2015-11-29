@@ -1,0 +1,264 @@
+
+<html lang="en" ng-app="myApp"><head>
+      <meta charset="UTF-8">
+      <link href="http://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700,800" rel="stylesheet" type="text/css">
+      <link rel="stylesheet" type="text/css" href="css/samudra.css">
+        <script type="text/javascript" src="js/parse.js"></script>
+       <script type="text/javascript" src="js/jquery-1.9.1.min.js"></script>
+       <script type="text/javascript" src="js/custom.js"></script>
+      <title>Sa-Mudra registration</title>
+   </head>
+   <body>
+
+      <form>
+	<input type="button" class="btn" tabindex="0" value="Refresh" onclick="FetchFromParse('TEMPCOOR','1');">
+        <a href="ShowSearch.Html" target="_self"><input type="button" class="btn" tabindex="0" value="Search" /></a>
+        
+         <h1>Sa-Mudra</h1>
+         <h2>Informant-Counselee/Relative</h2>
+          <div class="row">
+            <input type="text" name="inputFields" id="MobileNumber">
+            <label for="mobno">
+               Mobile No</label>
+         </div>
+         <div class="row">
+            <input type="text" name="inputFields" id="Name">
+            <label for="fancy-text">Name</label>
+         </div>
+         <div class="row">
+            <input type="date" name="inputFields" id="DOB">
+            <label for="fancy-date">DOB</label>
+         </div>
+         <div class="row">
+            <select name="inputFields" id="Gender">
+               <option value="male">Male</option>
+               <option value="female">Female</option>
+               <option value="others">Others</option>
+            </select>
+            <label for="gender">Gender</label>
+         </div>
+         <div class="row">
+            <textarea name="inputFields" id="EducationQualification" style="min-height:100px"></textarea>
+            <label for="fancy-textarea">Educational Qualification</label>
+         </div>
+         <div class="row">
+            <input type="text" name="inputFields" id="NameOfInstitution" style="padding: 10px 10px 10px 160px">
+            <label for="edc-quali">
+               Institution Name</label>
+         </div>
+         <div class="row">
+         <input type="text" name="inputFields" id="WorkExperience" style="padding: 10px 10px 10px 160px">
+         <label for="work-exp">
+         Work experience</label>
+         </div>
+         <div class="row">
+         <textarea name="inputFields" style="min-height:100px" id="PermanentAddress"></textarea>
+         <label for="address">Permanent Address</label>
+         </div>
+         <div class="row">
+         <textarea name="inputFields" style="min-height:100px" id="ResidentialAddress"></textarea>
+         <label for="address">Residential Address</label>
+         </div>
+          <div class="row">
+            <input type="text" name="inputFields" id="EmailID">
+            <label for="mobno">
+               Secondary Mobile No</label>
+         </div>
+         <div class="row">
+         <input type="email" id="SecondaryMobile" name="inputFields">
+         <label for="email">Email</label>
+         </div>
+         <h2>Personal Information</h2>
+         <div class="row">
+         	<select name="inputFields" id="RelationshipStatus">
+               <option value="single">Single</option>
+               <option value="married">Married</option>
+               <option value="relation">In Relationship</option>
+            </select>
+            <label for="relation-status">Relationship status</label>
+         </div>
+         <div class="row">
+         <textarea id="Hobbies" name="inputFields" style="min-height:100px"></textarea>
+         <label for="hobby">Hobbies / Talents</label>
+         </div>
+         <div class="row">
+         <textarea id="FathersDetails" name="inputFields" style="min-height:100px"></textarea>
+         <label for="father">Father's Name / Qualifications / Occupation</label>
+         </div>
+         <div class="row">
+         <textarea id="MothersDetails" name="inputFields" style="min-height:100px"></textarea>
+         <label for="mother">Mother's Name / Qualifications / Occupation</label>
+         </div>
+         <div class="row">
+            <select name="inputFields" id="ParentsMaritialStatus">
+               <option value="married">Married</option>
+               <option value="relation">Divorced</option>
+            </select>
+            <label for="parent-status">Parent Maritial status</label>
+         </div>
+         <div class="row">
+            <input type="text" name="inputFields" id="TotalMember">
+            <label for="family-members" style="width: 195px">Total Members in Family</label>
+         </div>
+         <div class="row">
+            <input type="text" name="inputFields" id="FamilyIncome">
+            <label for="family-income">Family Income</label>
+         </div>
+         <div class="row">
+         <textarea id="FamilyHistory" name="inputFields" style="min-height:100px"></textarea>
+         <label for="family-history">Family History ( MI / Suicide / addictions )</label>
+         </div>
+         <div class="row">
+         <textarea id="ChildhoodBehavior" name="inputFields" style="min-height:100px"></textarea>
+         <label for="childhood-behaviour">Childhood Behavioral Issues ( if any )</label>
+         </div>
+         <div class="row">
+         <textarea id="WhyYouNeedCounseling" name="inputFields" style="min-height:100px"></textarea>
+         <label for="why">Why you need counseling ?</label>
+         </div>
+         <div class="row">
+         <textarea id="WhatYouExpectFromCounselor" name="inputFields" style="min-height:100px"></textarea>
+         <label for="what">What do you expect from counsellor this session ?</label>
+         </div>
+         <h2>Do these issues listed below bother you ? </h2>
+          <div class="row check" name="inputFields" id="IssuesBotherYou">
+            <table>
+               <tr>
+                  <td>
+                     Alcoholic / Other Addictions 
+                  </td>
+                  <td>
+                     <input type="checkbox" id="issue1" value="Alcoholic / Other Addictions">
+                     <label for="issue1"></label>
+                  </td>
+               </tr>
+               <tr>
+                  <td>Lack of Confidence</td>
+                  <td>
+                     <input type="checkbox" id="issue2" value="Lack of Confidence "> 
+                     <label for="issue2"></label>
+                  </td>
+               </tr>
+               <tr>
+                  <td>Difficulty in Communication</td>
+                  <td>
+                     <input type="checkbox" id="issue3" value="Difficulty in Communication"> 
+                     <label for="issue3"></label>
+                  </td>
+               </tr>
+               <tr>
+                  <td>Lack of opportunities</td>
+                  <td>
+                     <input type="checkbox" id="issue4" value="Lack of opportunities">
+                     <label for="issue4"></label>
+                  </td>
+               </tr>
+               <tr>
+                  <td>Unhealthy and Unnecessary peer competition</td>
+                  <td>
+                     <input type="checkbox" id="issue5" value="Unhealthy and Unnecessary peer competition">
+                     <label for="issue5"></label>
+                  </td>
+               </tr>
+               <tr>
+                  <td>Physical Handicap</td>
+                  <td>
+                     <input type="checkbox" id="issue6" value="Physical Handicap">
+                     <label for="issue6"></label>
+                  </td>
+               </tr>
+               <tr>
+                  <td>OCD / By Polar Disorder</td>
+                  <td>
+                     <input type="checkbox" id="issue7" value="OCD / By Polar Disorder">
+                     <label for="issue7"></label>
+                  </td>
+               </tr>
+               <tr>
+                  <td>ADHD ( Attention deficiency &amp; Hyper activity disorder)  </td>
+                  <td>
+                     <input type="checkbox" id="issue8" value="ADHD ( Attention deficiency &amp; Hyper activity disorder) ">
+                     <label for="issue8"></label>
+                  </td>
+               </tr>
+               <tr>
+                  <td>Pchycological Issues</td>
+                  <td>
+                     <input type="checkbox" id="issue9" value="Pchycological Issues"> 
+                     <label for="issue9"></label>
+                  </td>
+               <tr>
+                  <td>Sexuality-related Issues</td>
+                  <td>
+                     <input type="checkbox" id="issue10" value="Sexuality-related Issues">
+                     <label for="issue10"></label>
+                  </td>
+               </tr>
+               <tr>
+                  <td>Family-related Issues </td>
+                  <td>
+                     <input type="checkbox" id="issue11" value="Family-related Issues">
+                     <label for="issue11"></label>
+                  </td>
+               </tr>
+               <tr>
+                  <td>Peer-related Issues</td>
+                  <td>
+                     <input type="checkbox" id="issue12" value="Peer-related Issues"> 
+                     <label for="issue12"></label>
+                  </td>
+               </tr>
+               <tr>
+                  <td>Academic-related Issues</td>
+                  <td>
+                     <input type="checkbox" id="issue13" value="Academic-related Issues">
+                     <label for="issue13"></label>
+                  </td>
+               </tr>
+               <tr>
+                  <td>Health &amp; Fitness related Issues</td>
+                  <td>
+                     <input type="checkbox" id="issue14" value="Health & Fitness related Issues">
+                     <label for="issue14"></label>
+                  </td>
+               </tr>
+               <tr>
+                  <td>Relationship Issues</td>
+                  <td>
+                     <input type="checkbox" id="issue15" value="Relationship Issues"> 
+                     <label for="issue15"></label>
+                  </td>
+               </tr>
+               <tr>
+                  <td>Stress &amp; Anxiety</td>
+                  <td>
+                     <input type="checkbox" id="issue16" value="Stress & Anxiety">
+                     <label for="issue16"></label>
+                  </td>
+               </tr>
+               <tr>
+                  <td>Career Confusions</td>
+                  <td>
+                     <input type="checkbox" id="issue17" value="Career Confusions">
+                     <label for="issue17"></label>
+                  </td>
+               </tr>
+               <tr>
+                  <td>Addictions/Habituation</td>
+                  <td>
+                     <input type="checkbox" id="issue18" value="Addictions/Habituations"> 
+                     <label for="issue18"></label>
+                  </td>
+               </tr>
+            </table>
+         </div>
+
+         <input type="button" class="btn" tabindex="0" value="Submit" onclick="PushToParse();">
+      </form>
+   
+<script>
+checkCallerNumber();
+</script>
+
+   
+</body></html>
