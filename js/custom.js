@@ -368,6 +368,3 @@ function FetchRecord(Tablename){
          });
     
 }
-    
-    
-}
