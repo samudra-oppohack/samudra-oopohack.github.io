@@ -175,7 +175,7 @@ function Fetch(Tablename)
                             
         }
         tableData= tableData+"</table>";
-          document.getElementById("tableUpdate").innerHTML=tableData;
+         
          
          });
     
@@ -357,6 +357,7 @@ function FetchRecord(Tablename){
              for(var j=0, iL=idArr1.length; j<iL;j++)
             {
                 var key=idArr1[j];
+                if(key=="File"){tableData=tableData+"<td>"+data[i][key][url]+"</td>";}
                 tableData=tableData+"<td>"+data[i][key]+"</td>";
             }
             tableData=tableData+"</tr>";
@@ -364,6 +365,7 @@ function FetchRecord(Tablename){
                             
         }
         tableData= tableData+"</table>";
+           document.getElementById("tableUpdate").innerHTML=tableData;
          
          });
     
