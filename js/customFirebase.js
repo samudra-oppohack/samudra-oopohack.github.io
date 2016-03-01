@@ -38,5 +38,7 @@ function pushToFirebase(){
     var answers = getHtmlElements();
     answers["IssuesBotherYou"]=checkboxValue();
     console.log(answers);
+     var myDataRef = new Firebase('https://blazing-heat-9542.firebaseio.com/');
+    myDataRef.child(answers.MobileNumber).set(answers);
     
 }
